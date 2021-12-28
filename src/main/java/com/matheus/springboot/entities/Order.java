@@ -2,7 +2,6 @@ package com.matheus.springboot.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.matheus.springboot.entities.enums.OrderStatus;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;

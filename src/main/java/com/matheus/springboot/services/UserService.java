@@ -2,6 +2,7 @@ package com.matheus.springboot.services;
 
 import com.matheus.springboot.entities.User;
 import com.matheus.springboot.repositories.UserRepository;
+import com.matheus.springboot.services.exptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,7 +19,7 @@ public class UserService {
     }
     public User findById(Long id){
         Optional<User> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public User insert(User obj){
